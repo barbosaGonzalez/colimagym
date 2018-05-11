@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="es-ES" prefix="og: http://ogp.me/ns#" class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Aquí podras encontrar los gimnasios de colima para Pokémon Go">
+    <meta name="author" content="Hackazules">
+    <title>Pokémon GO Colima</title>
+    <meta name="csrf-param" content="authenticity_token" />
+    <meta name="csrf-token" content="f3g27rCVL9AEW6Ma+c+84/pVTvgJO5oPnADMCuzqfOK3E2Xemfd7iG/CcvnGWRSFDFi6U7XZKpE2STFXsD+Bdg==" />
+    <link href="images/logo.ico" rel="shortcut icon">
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Custom styles for this template -->
+    <link href="css/sticky-footer-navbar.css" rel="stylesheet" media="screen">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_WKoXvQJbIrvAKWJqy-q2fBdeYKObGtc&callback=initMap"
+  type="text/javascript"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-inverse navbar-expand-lg">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">ColimaGym</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="pases.html">Pases Ex</a></li>
+        <li class="active"><a href="farmear.html">Farmear <span class="sr-only">(current)</span></a></li>
+        <li><a href="mapa.html">Mapa</a></li>
+        <!--<li><a href="nidos.html">Nidos</a></li>-->
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+</header>
+<main>
+  <div class="container">
+    <div class="row">
+      <h1>Colima</h1>
+      <p> Lugares para farmear de mejor manera (muchas pokeparadas) en el estado de Colima</p>
+      <br>
+      <table class="table" id="gimnasios">
+        <tr>
+          <th>Nombre</th>
+          <th>Coordenadas</th>
+          <th>Acciones</th>
+        </tr>
+        <tr>
+          <td>Universidad de Colima (Campus Central)</td>
+          <td>
+              <input readonly="true" disabled="disabled" type_="text" id="buscador" value="19.248779,-103.698712" ></input>
+          </td>
+          <td style="display: none">Universidad de Colima (Campus Central)</td>
+          <td>
+            <button 
+              type="button" 
+              title="Mostrar"
+              onclick="configurarMapa('Universidad de Colima (Campus Central)', 19.248779,-103.698712)"
+              class="btn btn-info fa fa-eye" 
+              data-toggle="modal" 
+              data-target="#myModal"> Mostrar</button>
+            <button 
+              type="button" 
+              title="Llegar"
+              onclick="comoLlegar('19.248779,-103.698712')"
+              class="btn btn-warning fa fa-map-o"> Llegar</button>
+            <button title="Copiar" class="btn btn-success fa fa-files-o" data-clipboard-text="19.248779,-103.698712"> Copiar</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Instituto Tecnológico de Colima (TEC)</td>
+          <td>
+              <input readonly="true" disabled="disabled" type_="text" id="buscador" value="19.2609689,-103.7237269" ></input>
+          </td>
+          <td style="display: none">Instituto Tecnológico de Colima (TEC)</td>
+          <td>
+            <button 
+              type="button" 
+              title="Mostrar"
+              onclick="configurarMapa('Instituto Tecnológico de Colima (TEC)', 19.2609689,-103.7237269)"
+              class="btn btn-info fa fa-eye" 
+              data-toggle="modal" 
+              data-target="#myModal"> Mostrar</button>
+            <button 
+              type="button" 
+              title="Llegar"
+              onclick="comoLlegar('19.2609689,-103.7237269')"
+              class="btn btn-warning fa fa-map-o"> Llegar</button>
+            <button title="Copiar" class="btn btn-success fa fa-files-o" data-clipboard-text="19.2609689,-103.7237269"> Copiar</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Casa de la cultura de Colima</td>
+          <td>
+              <input readonly="true" disabled="disabled" type_="text" id="buscador" value="19.2419013,-103.7158044" ></input>
+          </td>
+          <td style="display: none">Casa de la cultura de Colima</td>
+          <td>
+            <button 
+              type="button" 
+              title="Mostrar"
+              onclick="configurarMapa('Casa de la cultura de Colima', 19.2419013,-103.7158044)"
+              class="btn btn-info fa fa-eye" 
+              data-toggle="modal" 
+              data-target="#myModal"> Mostrar</button>
+            <button 
+              type="button" 
+              title="Llegar"
+              onclick="comoLlegar('19.2419013,-103.7158044')"
+              class="btn btn-warning fa fa-map-o"> Llegar</button>
+            <button title="Copiar" class="btn btn-success fa fa-files-o" data-clipboard-text="19.2419013,-103.7158044"> Copiar</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Jardín Nuñez</td>
+          <td>
+              <input readonly="true" disabled="disabled" type_="text" id="buscador" value="19.239940, -103.724636" ></input>
+          </td>
+          <td style="display: none">Jardín Nuñez</td>
+          <td>
+            <button 
+              type="button" 
+              title="Mostrar"
+              onclick="configurarMapa('Jardín Nuñez', 19.239940, -103.724636)"
+              class="btn btn-info fa fa-eye" 
+              data-toggle="modal" 
+              data-target="#myModal"> Mostrar</button>
+            <button 
+              type="button" 
+              title="Llegar"
+              onclick="comoLlegar('19.239940, -103.724636')"
+              class="btn btn-warning fa fa-map-o"> Llegar</button>
+            <button title="Copiar" class="btn btn-success fa fa-files-o" data-clipboard-text="19.239940, -103.724636"> Copiar</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Centro de Colima</td>
+          <td>
+              <input readonly="true" disabled="disabled" type_="text" id="buscador" value="19.243404, -103.728573" ></input>
+          </td>
+          <td style="display: none">Centro de Colima</td>
+          <td>
+            <button 
+              type="button" 
+              title="Mostrar"
+              onclick="configurarMapa('Centro de Colima', 19.243404, -103.728573)"
+              class="btn btn-info fa fa-eye" 
+              data-toggle="modal" 
+              data-target="#myModal"> Mostrar</button>
+            <button 
+              type="button" 
+              title="Llegar"
+              onclick="comoLlegar('19.243404, -103.728573')"
+              class="btn btn-warning fa fa-map-o"> Llegar</button>
+            <button title="Copiar" class="btn btn-success fa fa-files-o" data-clipboard-text="19.243404, -103.728573"> Copiar</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Malecon de Manzanillo</td>
+          <td>
+              <input readonly="true" disabled="disabled" type_="text" id="buscador" value="19.0535627,-104.3140844" ></input>
+          </td>
+          <td style="display: none">Malecon de Manzanillo</td>
+          <td>
+            <button 
+              type="button" 
+              title="Mostrar"
+              onclick="configurarMapa('Malecon de Manzanillo', 19.0535627,-104.3140844)"
+              class="btn btn-info fa fa-eye" 
+              data-toggle="modal" 
+              data-target="#myModal"> Mostrar</button>
+            <button 
+              type="button" 
+              title="Llegar"
+              onclick="comoLlegar('19.0535627,-104.3140844')"
+              class="btn btn-warning fa fa-map-o"> Llegar</button>
+            <button title="Copiar" class="btn btn-success fa fa-files-o" data-clipboard-text="19.0535627,-104.3140844"> Copiar</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="row">
+      <h1>Todo el mundo</h1>
+      <p> Lugares para farmear de mejor manera (muchas pokeparadas) en todo el mundo</p>
+      <br>
+      <table class="table" id="gimnasios">
+        <tr>
+          <th>Nombre</th>
+          <th>Coordenadas</th>
+          <th>Acciones</th>
+        </tr>
+        <tr>
+          <td>Taiwan </td>
+          <td>
+              <input readonly="true" disabled="disabled" type_="text" id="buscador" value="25.025927, 121.536797" ></input>
+          </td>
+          <td style="display: none">Taiwan </td>
+          <td>
+            <button 
+              type="button" 
+              title="Mostrar"
+              onclick="configurarMapa('Taiwan ', 25.025927, 121.536797)"
+              class="btn btn-info fa fa-eye" 
+              data-toggle="modal" 
+              data-target="#myModal"> Mostrar</button>
+            <button 
+              type="button" 
+              title="Llegar"
+              onclick="comoLlegar('25.025927, 121.536797')"
+              class="btn btn-warning fa fa-map-o"> Llegar</button>
+            <button title="Copiar" class="btn btn-success fa fa-files-o" data-clipboard-text="25.025927, 121.536797"> Copiar</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Las Vegas (US)</td>
+          <td>
+              <input readonly="true" disabled="disabled" type_="text" id="buscador" value="36.10886,-115.17410" ></input>
+          </td>
+          <td style="display: none">Las Vegas (US)</td>
+          <td>
+            <button 
+              type="button" 
+              title="Mostrar"
+              onclick="configurarMapa('Las Vegas (US)', 36.10886,-115.17410)"
+              class="btn btn-info fa fa-eye" 
+              data-toggle="modal" 
+              data-target="#myModal"> Mostrar</button>
+            <button 
+              type="button" 
+              title="Llegar"
+              onclick="comoLlegar('36.10886,-115.17410')"
+              class="btn btn-warning fa fa-map-o"> Llegar</button>
+            <button title="Copiar" class="btn btn-success fa fa-files-o" data-clipboard-text="36.10886,-115.17410"> Copiar</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Alemania (CENTRO SHOPPING MALL)</td>
+          <td>
+              <input readonly="true" disabled="disabled" type_="text" id="buscador" value="51.4900255429401, 6.874931529164315" ></input>
+          </td>
+          <td style="display: none">Alemania (CENTRO SHOPPING MALL)</td>
+          <td>
+            <button 
+              type="button" 
+              title="Mostrar"
+              onclick="configurarMapa('Alemania (CENTRO SHOPPING MALL)', 51.4900255429401, 6.874931529164315)"
+              class="btn btn-info fa fa-eye" 
+              data-toggle="modal" 
+              data-target="#myModal"> Mostrar</button>
+            <button 
+              type="button" 
+              title="Llegar"
+              onclick="comoLlegar('51.4900255429401, 6.874931529164315')"
+              class="btn btn-warning fa fa-map-o"> Llegar</button>
+            <button title="Copiar" class="btn btn-success fa fa-files-o" data-clipboard-text="51.4900255429401, 6.874931529164315"> Copiar</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Singapur </td>
+          <td>
+              <input readonly="true" disabled="disabled" type_="text" id="buscador" value="1.3394167, 103.72847" ></input>
+          </td>
+          <td style="display: none">Singapur </td>
+          <td>
+            <button 
+              type="button" 
+              title="Mostrar"
+              onclick="configurarMapa('Singapur ', 1.3394167, 103.72847)"
+              class="btn btn-info fa fa-eye" 
+              data-toggle="modal" 
+              data-target="#myModal"> Mostrar</button>
+            <button 
+              type="button" 
+              title="Llegar"
+              onclick="comoLlegar('1.3394167, 103.72847')"
+              class="btn btn-warning fa fa-map-o"> Llegar</button>
+            <button title="Copiar" class="btn btn-success fa fa-files-o" data-clipboard-text="1.3394167, 103.72847"> Copiar</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Sidney, Australia</td>
+          <td>
+              <input readonly="true" disabled="disabled" type_="text" id="buscador" value="-33.8643,151.2155" ></input>
+          </td>
+          <td style="display: none">Sidney, Australia</td>
+          <td>
+            <button 
+              type="button" 
+              title="Mostrar"
+              onclick="configurarMapa('Sidney, Australia', -33.8643,151.2155)"
+              class="btn btn-info fa fa-eye" 
+              data-toggle="modal" 
+              data-target="#myModal"> Mostrar</button>
+            <button 
+              type="button" 
+              title="Llegar"
+              onclick="comoLlegar('-33.8643,151.2155')"
+              class="btn btn-warning fa fa-map-o"> Llegar</button>
+            <button title="Copiar" class="btn btn-success fa fa-files-o" data-clipboard-text="-33.8643,151.2155"> Copiar</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Corea del Sur</td>
+          <td>
+              <input readonly="true" disabled="disabled" type_="text" id="buscador" value="37.511215, 127.098211" ></input>
+          </td>
+          <td style="display: none">Corea del Sur</td>
+          <td>
+            <button 
+              type="button" 
+              title="Mostrar"
+              onclick="configurarMapa('Corea del Sur', 37.511215, 127.098211)"
+              class="btn btn-info fa fa-eye" 
+              data-toggle="modal" 
+              data-target="#myModal"> Mostrar</button>
+            <button 
+              type="button" 
+              title="Llegar"
+              onclick="comoLlegar('37.511215, 127.098211')"
+              class="btn btn-warning fa fa-map-o"> Llegar</button>
+            <button title="Copiar" class="btn btn-success fa fa-files-o" data-clipboard-text="37.511215, 127.098211"> Copiar</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Seoul (KR)</td>
+          <td>
+              <input readonly="true" disabled="disabled" type_="text" id="buscador" value="37.57192, 126.98231" ></input>
+          </td>
+          <td style="display: none">Seoul (KR)</td>
+          <td>
+            <button 
+              type="button" 
+              title="Mostrar"
+              onclick="configurarMapa('Seoul (KR)', 37.57192, 126.98231)"
+              class="btn btn-info fa fa-eye" 
+              data-toggle="modal" 
+              data-target="#myModal"> Mostrar</button>
+            <button 
+              type="button" 
+              title="Llegar"
+              onclick="comoLlegar('37.57192, 126.98231')"
+              class="btn btn-warning fa fa-map-o"> Llegar</button>
+            <button title="Copiar" class="btn btn-success fa fa-files-o" data-clipboard-text="37.57192, 126.98231"> Copiar</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Japón (11 poképaradas)</td>
+          <td>
+              <input readonly="true" disabled="disabled" type_="text" id="buscador" value="35.696189, 139.814484 " ></input>
+          </td>
+          <td style="display: none">Japón (11 poképaradas)</td>
+          <td>
+            <button 
+              type="button" 
+              title="Mostrar"
+              onclick="configurarMapa('Japón (11 poképaradas)', 35.696189, 139.814484 )"
+              class="btn btn-info fa fa-eye" 
+              data-toggle="modal" 
+              data-target="#myModal"> Mostrar</button>
+            <button 
+              type="button" 
+              title="Llegar"
+              onclick="comoLlegar('35.696189, 139.814484 ')"
+              class="btn btn-warning fa fa-map-o"> Llegar</button>
+            <button title="Copiar" class="btn btn-success fa fa-files-o" data-clipboard-text="35.696189, 139.814484 "> Copiar</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Nueva York (7 poképaradas)</td>
+          <td>
+              <input readonly="true" disabled="disabled" type_="text" id="buscador" value="40.755126, -73.983698" ></input>
+          </td>
+          <td style="display: none">Nueva York (7 poképaradas)</td>
+          <td>
+            <button 
+              type="button" 
+              title="Mostrar"
+              onclick="configurarMapa('Nueva York (7 poképaradas)', 40.755126, -73.983698)"
+              class="btn btn-info fa fa-eye" 
+              data-toggle="modal" 
+              data-target="#myModal"> Mostrar</button>
+            <button 
+              type="button" 
+              title="Llegar"
+              onclick="comoLlegar('40.755126, -73.983698')"
+              class="btn btn-warning fa fa-map-o"> Llegar</button>
+            <button title="Copiar" class="btn btn-success fa fa-files-o" data-clipboard-text="40.755126, -73.983698"> Copiar</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Dinamarca (25 poképaradas)</td>
+          <td>
+              <input readonly="true" disabled="disabled" type_="text" id="buscador" value="55.66256, 12.56215" ></input>
+          </td>
+          <td style="display: none">Dinamarca (25 poképaradas)</td>
+          <td>
+            <button 
+              type="button" 
+              title="Mostrar"
+              onclick="configurarMapa('Dinamarca (25 poképaradas)', 55.66256, 12.56215)"
+              class="btn btn-info fa fa-eye" 
+              data-toggle="modal" 
+              data-target="#myModal"> Mostrar</button>
+            <button 
+              type="button" 
+              title="Llegar"
+              onclick="comoLlegar('55.66256, 12.56215')"
+              class="btn btn-warning fa fa-map-o"> Llegar</button>
+            <button title="Copiar" class="btn btn-success fa fa-files-o" data-clipboard-text="55.66256, 12.56215"> Copiar</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Santa Monica (US)</td>
+          <td>
+              <input readonly="true" disabled="disabled" type_="text" id="buscador" value="34.009033, -118.497279" ></input>
+          </td>
+          <td style="display: none">Santa Monica (US)</td>
+          <td>
+            <button 
+              type="button" 
+              title="Mostrar"
+              onclick="configurarMapa('Santa Monica (US)', 34.009033, -118.497279)"
+              class="btn btn-info fa fa-eye" 
+              data-toggle="modal" 
+              data-target="#myModal"> Mostrar</button>
+            <button 
+              type="button" 
+              title="Llegar"
+              onclick="comoLlegar('34.009033, -118.497279')"
+              class="btn btn-warning fa fa-map-o"> Llegar</button>
+            <button title="Copiar" class="btn btn-success fa fa-files-o" data-clipboard-text="34.009033, -118.497279"> Copiar</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Vict. Rd, Minneap (US 150+ poképaradas en linea)</td>
+          <td>
+              <input readonly="true" disabled="disabled" type_="text" id="buscador" value="45.030176, -93.319296" ></input>
+          </td>
+          <td style="display: none">Vict. Rd, Minneap (US 150+ poképaradas en linea)</td>
+          <td>
+            <button 
+              type="button" 
+              title="Mostrar"
+              onclick="configurarMapa('Vict. Rd, Minneap (US 150+ poképaradas en linea)', 45.030176, -93.319296)"
+              class="btn btn-info fa fa-eye" 
+              data-toggle="modal" 
+              data-target="#myModal"> Mostrar</button>
+            <button 
+              type="button" 
+              title="Llegar"
+              onclick="comoLlegar('45.030176, -93.319296')"
+              class="btn btn-warning fa fa-map-o"> Llegar</button>
+            <button title="Copiar" class="btn btn-success fa fa-files-o" data-clipboard-text="45.030176, -93.319296"> Copiar</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Indonesia</td>
+          <td>
+              <input readonly="true" disabled="disabled" type_="text" id="buscador" value="-6.308223, 106.820619" ></input>
+          </td>
+          <td style="display: none">Indonesia</td>
+          <td>
+            <button 
+              type="button" 
+              title="Mostrar"
+              onclick="configurarMapa('Indonesia', -6.308223, 106.820619)"
+              class="btn btn-info fa fa-eye" 
+              data-toggle="modal" 
+              data-target="#myModal"> Mostrar</button>
+            <button 
+              type="button" 
+              title="Llegar"
+              onclick="comoLlegar('-6.308223, 106.820619')"
+              class="btn btn-warning fa fa-map-o"> Llegar</button>
+            <button title="Copiar" class="btn btn-success fa fa-files-o" data-clipboard-text="-6.308223, 106.820619"> Copiar</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Big Ben (UK)</td>
+          <td>
+              <input readonly="true" disabled="disabled" type_="text" id="buscador" value="51.501064,-0.124655" ></input>
+          </td>
+          <td style="display: none">Big Ben (UK)</td>
+          <td>
+            <button 
+              type="button" 
+              title="Mostrar"
+              onclick="configurarMapa('Big Ben (UK)', 51.501064,-0.124655)"
+              class="btn btn-info fa fa-eye" 
+              data-toggle="modal" 
+              data-target="#myModal"> Mostrar</button>
+            <button 
+              type="button" 
+              title="Llegar"
+              onclick="comoLlegar('51.501064,-0.124655')"
+              class="btn btn-warning fa fa-map-o"> Llegar</button>
+            <button title="Copiar" class="btn btn-success fa fa-files-o" data-clipboard-text="51.501064,-0.124655"> Copiar</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Francia (FR)</td>
+          <td>
+              <input readonly="true" disabled="disabled" type_="text" id="buscador" value="48.890717,2.237837" ></input>
+          </td>
+          <td style="display: none">Francia (FR)</td>
+          <td>
+            <button 
+              type="button" 
+              title="Mostrar"
+              onclick="configurarMapa('Francia (FR)', 48.890717,2.237837)"
+              class="btn btn-info fa fa-eye" 
+              data-toggle="modal" 
+              data-target="#myModal"> Mostrar</button>
+            <button 
+              type="button" 
+              title="Llegar"
+              onclick="comoLlegar('48.890717,2.237837')"
+              class="btn btn-warning fa fa-map-o"> Llegar</button>
+            <button title="Copiar" class="btn btn-success fa fa-files-o" data-clipboard-text="48.890717,2.237837"> Copiar</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Paris Disney (FR)</td>
+          <td>
+              <input readonly="true" disabled="disabled" type_="text" id="buscador" value="48.8725,2.7775" ></input>
+          </td>
+          <td style="display: none">Paris Disney (FR)</td>
+          <td>
+            <button 
+              type="button" 
+              title="Mostrar"
+              onclick="configurarMapa('Paris Disney (FR)', 48.8725,2.7775)"
+              class="btn btn-info fa fa-eye" 
+              data-toggle="modal" 
+              data-target="#myModal"> Mostrar</button>
+            <button 
+              type="button" 
+              title="Llegar"
+              onclick="comoLlegar('48.8725,2.7775')"
+              class="btn btn-warning fa fa-map-o"> Llegar</button>
+            <button title="Copiar" class="btn btn-success fa fa-files-o" data-clipboard-text="48.8725,2.7775"> Copiar</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Pier 39 (USA)</td>
+          <td>
+              <input readonly="true" disabled="disabled" type_="text" id="buscador" value="37.809511,-122.410189" ></input>
+          </td>
+          <td style="display: none">Pier 39 (USA)</td>
+          <td>
+            <button 
+              type="button" 
+              title="Mostrar"
+              onclick="configurarMapa('Pier 39 (USA)', 37.809511,-122.410189)"
+              class="btn btn-info fa fa-eye" 
+              data-toggle="modal" 
+              data-target="#myModal"> Mostrar</button>
+            <button 
+              type="button" 
+              title="Llegar"
+              onclick="comoLlegar('37.809511,-122.410189')"
+              class="btn btn-warning fa fa-map-o"> Llegar</button>
+            <button title="Copiar" class="btn btn-success fa fa-files-o" data-clipboard-text="37.809511,-122.410189"> Copiar</button>
+          </td>
+        </tr>
+        <tr>
+          <td>CDMX (Alameda Central)</td>
+          <td>
+              <input readonly="true" disabled="disabled" type_="text" id="buscador" value="19.436202,-99.144337" ></input>
+          </td>
+          <td style="display: none">CDMX (Alameda Central)</td>
+          <td>
+            <button 
+              type="button" 
+              title="Mostrar"
+              onclick="configurarMapa('CDMX (Alameda Central)', 19.436202,-99.144337)"
+              class="btn btn-info fa fa-eye" 
+              data-toggle="modal" 
+              data-target="#myModal"> Mostrar</button>
+            <button 
+              type="button" 
+              title="Llegar"
+              onclick="comoLlegar('19.436202,-99.144337')"
+              class="btn btn-warning fa fa-map-o"> Llegar</button>
+            <button title="Copiar" class="btn btn-success fa fa-files-o" data-clipboard-text="19.436202,-99.144337"> Copiar</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Sydney Royal Bot. Gardens</td>
+          <td>
+              <input readonly="true" disabled="disabled" type_="text" id="buscador" value="-33.864311,151.215515" ></input>
+          </td>
+          <td style="display: none">Sydney Royal Bot. Gardens</td>
+          <td>
+            <button 
+              type="button" 
+              title="Mostrar"
+              onclick="configurarMapa('Sydney Royal Bot. Gardens', -33.864311,151.215515)"
+              class="btn btn-info fa fa-eye" 
+              data-toggle="modal" 
+              data-target="#myModal"> Mostrar</button>
+            <button 
+              type="button" 
+              title="Llegar"
+              onclick="comoLlegar('-33.864311,151.215515')"
+              class="btn btn-warning fa fa-map-o"> Llegar</button>
+            <button title="Copiar" class="btn btn-success fa fa-files-o" data-clipboard-text="-33.864311,151.215515"> Copiar</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Chicago (60 poképaradas)</td>
+          <td>
+              <input readonly="true" disabled="disabled" type_="text" id="buscador" value="42.0411,-87.7102" ></input>
+          </td>
+          <td style="display: none">Chicago (60 poképaradas)</td>
+          <td>
+            <button 
+              type="button" 
+              title="Mostrar"
+              onclick="configurarMapa('Chicago (60 poképaradas)', 42.0411,-87.7102)"
+              class="btn btn-info fa fa-eye" 
+              data-toggle="modal" 
+              data-target="#myModal"> Mostrar</button>
+            <button 
+              type="button" 
+              title="Llegar"
+              onclick="comoLlegar('42.0411,-87.7102')"
+              class="btn btn-warning fa fa-map-o"> Llegar</button>
+            <button title="Copiar" class="btn btn-success fa fa-files-o" data-clipboard-text="42.0411,-87.7102"> Copiar</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Rigos Loop, Honululu</td>
+          <td>
+              <input readonly="true" disabled="disabled" type_="text" id="buscador" value="21.2983,-157.8601" ></input>
+          </td>
+          <td style="display: none">Rigos Loop, Honululu</td>
+          <td>
+            <button 
+              type="button" 
+              title="Mostrar"
+              onclick="configurarMapa('Rigos Loop, Honululu', 21.2983,-157.8601)"
+              class="btn btn-info fa fa-eye" 
+              data-toggle="modal" 
+              data-target="#myModal"> Mostrar</button>
+            <button 
+              type="button" 
+              title="Llegar"
+              onclick="comoLlegar('21.2983,-157.8601')"
+              class="btn btn-warning fa fa-map-o"> Llegar</button>
+            <button title="Copiar" class="btn btn-success fa fa-files-o" data-clipboard-text="21.2983,-157.8601"> Copiar</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Jimmys Loop, Dallas (USA)</td>
+          <td>
+              <input readonly="true" disabled="disabled" type_="text" id="buscador" value="32.7758,-96.7967" ></input>
+          </td>
+          <td style="display: none">Jimmys Loop, Dallas (USA)</td>
+          <td>
+            <button 
+              type="button" 
+              title="Mostrar"
+              onclick="configurarMapa('Jimmys Loop, Dallas (USA)', 32.7758,-96.7967)"
+              class="btn btn-info fa fa-eye" 
+              data-toggle="modal" 
+              data-target="#myModal"> Mostrar</button>
+            <button 
+              type="button" 
+              title="Llegar"
+              onclick="comoLlegar('32.7758,-96.7967')"
+              class="btn btn-warning fa fa-map-o"> Llegar</button>
+            <button title="Copiar" class="btn btn-success fa fa-files-o" data-clipboard-text="32.7758,-96.7967"> Copiar</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Toms Loop, Ann Arbor (USA)</td>
+          <td>
+              <input readonly="true" disabled="disabled" type_="text" id="buscador" value="42.2808,-83.7430" ></input>
+          </td>
+          <td style="display: none">Toms Loop, Ann Arbor (USA)</td>
+          <td>
+            <button 
+              type="button" 
+              title="Mostrar"
+              onclick="configurarMapa('Toms Loop, Ann Arbor (USA)', 42.2808,-83.7430)"
+              class="btn btn-info fa fa-eye" 
+              data-toggle="modal" 
+              data-target="#myModal"> Mostrar</button>
+            <button 
+              type="button" 
+              title="Llegar"
+              onclick="comoLlegar('42.2808,-83.7430')"
+              class="btn btn-warning fa fa-map-o"> Llegar</button>
+            <button title="Copiar" class="btn btn-success fa fa-files-o" data-clipboard-text="42.2808,-83.7430"> Copiar</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Niantic Hq, SF (USA)</td>
+          <td>
+              <input readonly="true" disabled="disabled" type_="text" id="buscador" value="37.7894,-122.4016" ></input>
+          </td>
+          <td style="display: none">Niantic Hq, SF (USA)</td>
+          <td>
+            <button 
+              type="button" 
+              title="Mostrar"
+              onclick="configurarMapa('Niantic Hq, SF (USA)', 37.7894,-122.4016)"
+              class="btn btn-info fa fa-eye" 
+              data-toggle="modal" 
+              data-target="#myModal"> Mostrar</button>
+            <button 
+              type="button" 
+              title="Llegar"
+              onclick="comoLlegar('37.7894,-122.4016')"
+              class="btn btn-warning fa fa-map-o"> Llegar</button>
+            <button title="Copiar" class="btn btn-success fa fa-files-o" data-clipboard-text="37.7894,-122.4016"> Copiar</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Mapa del gimnasio</h4>
+            </div>
+            <div class="modal-body">
+
+                <div id="map_canvas" style="width:auto; height: 450px;"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.rawgit.com/zenorocha/clipboard.js/v1.7.1/dist/clipboard.min.js"></script>
+<script src="js/colimagym.js"></script>
+            </div>
+          </div>
+      </div>
+      </main>
+      <footer class="footer">
+      <div class="container">
+        <span class="text-muted">Hackazules (2018).</span>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<!-- Colimagym was created by and is maintained by **[Edsel Barbosa Gonzalez]**
+
+ColimaGym is based on the [Colimago](http://colimago.com/) page created by [Diego Ávalos](https://www.facebook.com/diego.avalos.357284) -->
