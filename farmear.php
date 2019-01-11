@@ -1,5 +1,5 @@
 <?php
-$estado = $_GET['e'];
+$estado = isset($_GET['e']) ? $_GET['e'] : 1 ;
 $titulo = "Zona Farming";
 $is_index = false;
 include('./config/init.php');

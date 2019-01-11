@@ -1,5 +1,5 @@
 <?php $titulo = "Donaciones";
-$estado = $_GET['e'];
+$estado = isset($_GET['e']) ? $_GET['e'] : 1 ;
 $is_index = false;
 include('./config/init.php');
 include('./includes/header.php');?>
