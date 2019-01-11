@@ -1,5 +1,6 @@
 <?php $titulo = "Shiny Chance";
-$is_index = true;
+$estado = $_GET['e'];
+$is_index = false;
 include('./config/init.php');
 include('./includes/header.php'); ?>
 	<!-- Page Content -->
@@ -44,15 +45,15 @@ include('./includes/header.php'); ?>
 						# Encuentros: &nbsp;
 						<input id="encounters" type='number' oninput='edit_val_man(false)'/>
 					</div>
-					<div id='not_get' class='output_holder'>
+					<div id='not_get' class='output_holder' hidden>
 						<div id='chance_not_get' class='dialog'></div>
 						<div id='chance_not_get_per' class='per'></div>
 					</div>
-					<div id='to_get' class='output_holder'>
+					<div id='to_get' class='output_holder' hidden>
 						<div id='chance_to_get' class='dialog'></div>
 						<div id='chance_to_get_per' class='per'></div>
 					</div>
-					<div id='next' class='output_holder'>
+					<div id='next' class='output_holder' hidden>
 						<div id='next_chance' class='dialog'></div>
 						<div id='next_chance_per' class='per'></div>
 					</div>

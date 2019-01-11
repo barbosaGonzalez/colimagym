@@ -1,4 +1,5 @@
 <?php $titulo = "¡Calculadora Cooldown!";
+$estado = $_GET['e'];
 $is_index = false;
 include('./config/init.php');
 include('./includes/header.php');?>

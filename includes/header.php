@@ -105,22 +105,22 @@
 			<nav id="nav-menu-container">
 				<ul class="nav-menu">
 					<li>
-						<a href="<?php base_url("grupos.php"); ?>" >Grupos</a>
+						<a href="<?php base_url("grupos/?e=".$estado); ?>" >Grupos</a>
 					</li>
 					<li>
-						<a href="<?php base_url("farmear.php"); ?>" >Farming</a>
+						<a href="<?php base_url("farmear/?e=".$estado); ?>" >Farming</a>
 					</li>
 					<li>
-						<a href="<?php base_url("mapa.php"); ?>" >Mapas</a>
+						<a href="<?php base_url("mapa/?e=".$estado); ?>" >Mapas</a>
 					</li>
 					<li>
-						<a href="<?php base_url("donaciones.php"); ?>" >Donaciones</a>
+						<a href="<?php base_url("donaciones/?e=".$estado); ?>" >Donaciones</a>
 					</li>
 					<li class="menu-has-children"><a>Calculadoras</a>
 						<ul>
-						  <li><a href="<?php base_url("cooldown.php"); ?>" >Cooldown</a></li>
-						  <li><a href="<?php base_url("shiny.php"); ?>" >Oportunidades shiny</a></li>
-						  <li><a href="<?php base_url("desmotivacion.php"); ?>" >Gym Desmotivación</a></li>
+						  <li><a href="<?php base_url("cooldown/?e=".$estado); ?>" >Cooldown</a></li>
+						  <li><a href="<?php base_url("shiny/?e=".$estado); ?>" >Oportunidades shiny</a></li>
+						  <li><a href="<?php base_url("desmotivacion/?e=".$estado); ?>" >Gym Desmotivación</a></li>
 						  <!-- <li class="menu-has-children"><a href="#">Drop Down 2</a>
 							<ul>
 							  <li><a href="#">Deep Drop Down 1</a></li>

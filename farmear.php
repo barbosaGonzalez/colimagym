@@ -1,4 +1,6 @@
-<?php $titulo = "Zona Farming";
+<?php
+$estado = $_GET['e'];
+$titulo = "Zona Farming";
 $is_index = false;
 include('./config/init.php');
 include('./includes/header.php');
@@ -22,7 +24,7 @@ include('./config/database.php'); ?>
               <h6 class="card-title"><?php echo $row['nombre'] ?></h6>
               <img
                   class="rounded-circle img-fluid d-block mx-auto"
-                  src="./images/gym.png"
+                  src="<?php base_url('images/gym.png')?>"
                 />
               <div class="dropdown-divider"></div>
                   <p class="card-text">
@@ -54,7 +56,7 @@ include('./config/database.php'); ?>
               <h6 class="card-title"><?php echo $row['nombre'] ?></h6>
               <img
                   class="rounded-circle img-fluid d-block mx-auto"
-                  src="./images/gym.png"
+                  src="<?php base_url('images/gym.png')?>"
                 />
               <div class="dropdown-divider"></div>
                   <p class="card-text">

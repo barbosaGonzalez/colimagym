@@ -1,4 +1,5 @@
 <?php $titulo = "Desmotivación en Gym";
+$estado = $_GET['e'];
 $is_index = false;
 include('./config/init.php');
 include('./includes/header.php');?>

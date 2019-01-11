@@ -1,4 +1,5 @@
 <?php $titulo = "Grupos WhatsApp";
+$estado = $_GET['e'];
 $is_index = false;
 include('./config/init.php');
 include('./includes/header.php');
@@ -27,7 +28,7 @@ include('./config/database.php'); ?>
                 <h6 class="card-title"><?php echo $row['nombre'] ?></h6>
                 <img
                   class="rounded-circle img-fluid d-block mx-auto"
-                  src="<?php echo $row['imagen'] ?>"
+                  src="<?php base_url($row['imagen']) ?>"
                   alt="POKECODIGOS Y POKEDUDAS"
                 />
                 <p class="card-text"><?php echo $row['responsable'] ?></p>
@@ -41,7 +42,7 @@ include('./config/database.php'); ?>
                       height="40"
                       width="40"
                       alt="+<?php echo $row['celular'] ?>"
-                      src="./images/WhatsApp_Logo_1.png"
+                      src="<?php base_url('images/WhatsApp_Logo_1.png')?>"
                     />
                   </a>
                 </center>
