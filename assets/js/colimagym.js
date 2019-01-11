@@ -26,13 +26,8 @@ var portapapeles = new Clipboard(".btn");
 
 /** Mostrar o esconder elementos
  */
-function showElement(element, type) {
-  if (document.getElementById(element)) {
-    if (type === undefined) {
-      type = "block";
-    }
-    document.getElementById(element).style.display = type;
-  }
+function showElement(element) {
+    document.getElementById(element).hidden = false;
 }
 
 /** Calcular oportunidadeds
@@ -192,21 +187,21 @@ $("#modal_mapa").on("shown.bs.modal", function() {
 
 /** Busca los gimnasios por su datos importantes
  */
-function buscarGimnasio(filtro) {
+function buscarGimnasio(filtro, total_gimnasios) {
   $(".carton").show();
   var elementos = $(".carton ")
     .find('.card-body h5:not(:contains("' + utf8_encode(filtro) + '"))')
     .parent()
     .parent();
-  elementos.hide();
-  /*if(elementos.length <= 150){
+  //elementos.hide();
+  if(elementos.length <= total_gimnasios-1){
     elementos.hide();
     $('#notFoundElement').hide();
   }
-  if(elementos.length == 151 && filtro!=''){
+  if(elementos.length == total_gimnasios && filtro!=''){
     elementos.hide();
     $('#notFoundElement').show();
-  }*/
+  }
 }
 
 /** Decodificar cadena
@@ -517,6 +512,7 @@ function ipLookUp () {
 }
 
 $(document).ready(function() {
+    $('#notFoundElement').hide();
   jQuery(function($) {
 		$(".swipebox").swipebox();
     });

@@ -1,6 +1,6 @@
 <?php $titulo = "¡Bienvenid@s!";
 $is_index = true;
-$estado = 4; //1-> Colima, 2->Jalisco, 3->Durango, 4->Tuxtla
+$estado = 4;
 if($estado == 1){
     include('./config/init.php');
     include('./includes/header.php');
@@ -26,7 +26,23 @@ if($estado == 1){
 						<b>Gimnasio:</b>
 					</label>
 					<div class="input-group">
-						<input type="text" class="form-control" id="buscador" onkeyup="buscarGimnasio(this.value)" placeholder="Escribe el nombre del gimnasio...">
+						<?php
+					$total_registros = 0;
+					$total_municipios = 0;
+					$total_gimnasios = 0;
+					    foreach ($conn->query("SELECT count(gym.id) AS conteo FROM Estados AS edos
+						INNER JOIN Municipios AS mpos ON mpos.estado_id = edos.id
+						INNER JOIN Gimnasios AS gym ON gym.municipio_id = mpos.id
+						WHERE edos.id = ".$estado."") AS $contador){
+						    $total_gimnasios = $contador['conteo'];
+						}
+						foreach ($conn->query("SELECT count(mpos.id) AS conteo FROM Estados AS edos
+						INNER JOIN Municipios AS mpos ON mpos.estado_id = edos.id
+						WHERE edos.id = ".$estado."") AS $contador){
+						    $total_municipios = $contador['conteo'];
+						}
+						$total_registros = $total_gimnasios+$total_municipios?>
+						<input type="text" class="form-control" id="buscador" onkeyup="buscarGimnasio(this.value, <?php echo $total_registros ?>)" placeholder="Escribe el nombre del gimnasio...">
 						<span class="input-group-btn">
 							<button class="btn btn-primary" type="button">Go!</button>
 						</span>
@@ -79,18 +95,19 @@ if($estado == 1){
 					</div>
 				<?php } ?>
 			<?php } ?>
-			<!--<div id="notFoundElement" class="col-xs-12 col-lg-12 col-md-12 col-sm-12">
+			</div>
+			<div class="row stats-row">
+			    <div id="notFoundElement" class="col-xs-12 col-lg-12 col-md-12 col-sm-12">
 					<div class="notFoundElement">
 						<div class="notFoundElement-404">
 							<div></div>
 							<h1>¿?</h1>
 						</div>
-						<h2>Elemento no encontrado</h2>
-						<p>Intenta buscar con otro parametro.</p>
+						<h2>Intenta con otro gimnasio</h2>
 					</div>
 				</div>
 			</div>
-		</div>-->
+		</div>
 	</section>
 	<!-- Modal-->
 	<div class="modal fade" id="modal_mapa" role="dialog" data-keyboard="false" data-backdrop="static">
@@ -112,7 +129,7 @@ if($estado == 1){
 	<!-- /. Modal -->
 	<!-- The actual snackbar -->
 	<div id="snackbar">Coordenadas copiadas..</div>
-	<?php 
+	<?php
 	if($estado == 1)
 	    include('./includes/footer.php');
 	else
