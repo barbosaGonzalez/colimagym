@@ -31,15 +31,15 @@ if($estado == 1){
 					$total_registros = 0;
 					$total_municipios = 0;
 					$total_gimnasios = 0;
-					    foreach ($conn->query("SELECT count(gym.id) AS conteo FROM Estados AS edos
-						INNER JOIN Municipios AS mpos ON mpos.estado_id = edos.id
-						INNER JOIN Gimnasios AS gym ON gym.municipio_id = mpos.id
-						WHERE edos.id = ".$estado."") AS $contador){
+					    foreach ($conn->query("SELECT count(gym.gimnasio_id) AS conteo FROM Estados AS edos
+						INNER JOIN Municipios AS mpos ON mpos.estado_id = edos.estado_id
+						INNER JOIN Gimnasios AS gym ON gym.municipio_id = mpos.municipio_id
+						WHERE edos.estado_id = ".$estado."") AS $contador){
 						    $total_gimnasios = $contador['conteo'];
 						}
-						foreach ($conn->query("SELECT count(mpos.id) AS conteo FROM Estados AS edos
-						INNER JOIN Municipios AS mpos ON mpos.estado_id = edos.id
-						WHERE edos.id = ".$estado."") AS $contador){
+						foreach ($conn->query("SELECT count(mpos.municipio_id) AS conteo FROM Estados AS edos
+						INNER JOIN Municipios AS mpos ON mpos.estado_id = edos.estado_id
+						WHERE edos.estado_id = ".$estado."") AS $contador){
 						    $total_municipios = $contador['conteo'];
 						}
 						$total_registros = $total_gimnasios+$total_municipios?>
@@ -56,7 +56,9 @@ if($estado == 1){
 		<!-- /.container -->
 		<div class="container text-center">
 			<div class="row stats-row">
-			<?php foreach ($conn->query('SELECT edos.id AS estado_id, mpos.orden, mpos.id AS municipio_id, mpos.nombre AS municipio_nombre, mpos.corto FROM Estados AS edos INNER JOIN Municipios AS mpos ON mpos.estado_id = edos.id WHERE edos.id = '.$estado.' ORDER BY mpos.orden ASC') as $municipio){ ?>
+			<?php foreach ($conn->query('SELECT edos.estado_id, mpos.orden, mpos.municipio_id, mpos.nombre AS municipio_nombre, mpos.corto 
+			FROM Estados AS edos INNER JOIN Municipios AS mpos ON mpos.estado_id = edos.estado_id 
+			WHERE edos.estado_id = '.$estado.' ORDER BY mpos.orden ASC') as $municipio){ ?>
 				<div class="carton col-xs-12 col-lg-12 col-md-12 col-sm-12">
 					<div class="card-body">
 						<h4 class="card-title">Ciudad: <?php echo $municipio['municipio_nombre'] ?></h4>
